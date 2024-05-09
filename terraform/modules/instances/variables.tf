@@ -12,3 +12,4 @@ variable "instance_type" {
   type = string
   description = "Tipo de instancia a crear"
 }
+

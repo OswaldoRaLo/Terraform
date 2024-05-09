@@ -1,23 +1,10 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
+resource "aws_vpc" "main_vpc" {
+  cidr_block       = var.vpc_cidr_block
+  tags = {
+    Name = var.vpc_name
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
-module "network" {
-    source = "./modules/network"
-    vpc_name = var.network
-}
-
-module "instance" {
-  source = "./modules/instances"
-  instance_name = var.instance_name
-  instance_type = var.instance_type
-  subnet_id = module.network.subnet_id
+output "vpc_id" {
+  value = aws_vpc.main_vpc.id
 }
