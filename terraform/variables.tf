@@ -3,11 +3,6 @@ variable "network_name" {
   type        = string
 }
 
-variable "vpc_cidr_block" {
-  description = "El bloque CIDR de la VPC"
-  type        = string
-}
-
 variable "subnet_cidr_block" {
   description = "El bloque CIDR de la subred"
   type        = string

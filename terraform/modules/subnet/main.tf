@@ -4,6 +4,3 @@ resource "aws_subnet" "my_subnet" {
   availability_zone = var.availability_zone
 }
 
-output "subnet_id" {
-  value = aws_subnet.my_subnet.id
-}
