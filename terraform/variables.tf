@@ -1,19 +1,29 @@
-variable "vpc_name" {
+variable "network_name" {
+  description = "El nombre de la red"
   type        = string
-  description = "Nombre de la VPC main"
 }
 
-variable "vpc_name2" {
+variable "vpc_cidr_block" {
+  description = "El bloque CIDR de la VPC"
   type        = string
-  description = "Segunda VPC creada"
+}
+
+variable "subnet_cidr_block" {
+  description = "El bloque CIDR de la subred"
+  type        = string
+}
+
+variable "availability_zone" {
+  description = "La zona de disponibilidad para los recursos"
+  type        = string
 }
 
 variable "instance_name" {
+  description = "El nombre de la instancia"
   type        = string
-  description = "Nombre de la instancia"
 }
 
-variable "instance_name2" {
+variable "instance_type" {
+  description = "El tipo de instancia"
   type        = string
-  description = "Otro nombre de instancia"
 }
